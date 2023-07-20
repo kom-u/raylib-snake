@@ -7,6 +7,7 @@
 #include <deque>
 
 #include "Config/Asset/Asset.hpp"
+#include "Config/Audio/Audio.hpp"
 #include "Config/Setting/Setting.hpp"
 
 #include "Utililty/Util.hpp"

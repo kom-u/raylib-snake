@@ -6,6 +6,8 @@ using namespace std;
 class Game
 {
 public:
+    Audio audio;
+
     bool isRunning;
     int score;
 

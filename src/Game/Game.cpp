@@ -2,6 +2,8 @@
 
 Game::Game()
 {
+    Audio audio = Audio();
+
     isRunning = true;
     score = 0;
 
@@ -44,7 +46,7 @@ void Game::CheckCollisionWithFood()
     snake.addSegment = true;
     score++;
 
-    // PlaySound(eatSound);
+    PlaySound(audio.eatSfx);
 }
 
 void Game::CheckCollisionWithEdges()
@@ -53,7 +55,6 @@ void Game::CheckCollisionWithEdges()
     if (snakeHead.x < 0 || snakeHead.x >= Setting::cellCount || snakeHead.y < 0 || snakeHead.y >= Setting::cellCount)
     {
         GameOver();
-        // PlaySound(wallSound);
     }
 }
 
@@ -65,19 +66,17 @@ void Game::CheckCollisionWithBody()
         if (!Vector2Equals(snakeHead, snake.body[i]))
             continue;
         GameOver();
-        // PlaySound(wallSound);
     }
 }
 
 void Game::GameOver()
 {
+    PlaySound(audio.gameOverSfx);
     isRunning = false;
     score = 0;
 
     snake.Reset();
     food.GenerateRandomPosition(snake.body);
-
-    // PlaySound(wallSound);
 }
 
 void Game::HandleInput()
