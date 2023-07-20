@@ -18,8 +18,8 @@ Game::~Game()
 
 void Game::Draw()
 {
-    food.Draw();
     snake.Draw();
+    food.Draw();
 }
 
 void Game::Update()

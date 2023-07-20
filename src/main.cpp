@@ -26,6 +26,7 @@ int main()
         }
 
         ClearBackground(Setting::green);
+        
         DrawText(TextFormat("Score: %i", game.score), Setting::boardOffset - 5, 20, 40, Setting::darkGreen);
         DrawText("Ular Lily Lepas", Setting::boardOffset - 5, Setting::boardOffset + Setting::cellSize * Setting::cellCount + 10, 40, Setting::darkGreen);
         DrawRectangleLinesEx(Rectangle{(float)Setting::boardOffset - 5, (float)Setting::boardOffset - 5, (float)Setting::cellSize * Setting::cellCount + 10, (float)Setting::cellSize * Setting::cellCount + 10}, 5, Setting::darkGreen);
